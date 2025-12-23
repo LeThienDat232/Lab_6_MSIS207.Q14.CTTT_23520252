@@ -1,6 +1,6 @@
 import { buildAnswer } from "@/lib/rag";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
