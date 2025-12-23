@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "routing-basics",
+    "title": "Routing Basics",
+    "body": "Next.js uses file-system routing. Files in the pages or app directory become routes.\n\nDynamic routes use brackets, such as /blog/[id]. Static generation can pre-build routes for SEO."
+  },
+  {
+    "slug": "ssg-ssr",
+    "title": "SSG vs SSR",
+    "body": "Static Site Generation (SSG) builds pages at compile time. Server-Side Rendering (SSR) builds on each request.\n\nUse SSG for content that changes infrequently and SSR for data that must always be fresh."
+  },
+  {
+    "slug": "api-middleware",
+    "title": "API Routes and Middleware",
+    "body": "API routes run on the server. Middleware can check headers, enforce rate limits, and protect endpoints.\n\nFor sensitive endpoints, verify x-api-key or a session token before returning data."
+  }
+]

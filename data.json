@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "title": "Getting Started with Next.js",
+    "content": "This is a starter post about setting up a Next.js project and the basics of routing."
+  },
+  {
+    "id": "2",
+    "title": "Static Site Generation",
+    "content": "Learn how SSG builds pages at compile time using getStaticProps and getStaticPaths."
+  },
+  {
+    "id": "3",
+    "title": "Dynamic Routes",
+    "content": "Dynamic routes let you map pages like /blog/[id] to your data."
+  },
+  {
+    "id": "4",
+    "title": "API Routes",
+    "content": "API routes run on the server and can be protected with middleware."
+  },
+  {
+    "id": "5",
+    "title": "Image Optimization",
+    "content": "Use next/image to optimize size, formats, and prevent layout shift."
+  }
+]
