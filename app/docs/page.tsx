@@ -17,16 +17,29 @@ export default function DocsIndexPage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold">Docs</h2>
-        <ul className="space-y-2">
-          {docs.map((doc) => (
-            <li key={doc.slug}>
-              <Link className="underline" href={`/docs/${doc.slug}`}>
-                {doc.title}
-              </Link>
-            </li>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-lg font-semibold">Docs</h2>
+          <span className="pill">Static</span>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {docs.map((doc, idx) => (
+            <Link
+              key={doc.slug}
+              className="link-card reveal"
+              style={{ animationDelay: `${120 + idx * 80}ms` }}
+              href={`/docs/${doc.slug}`}
+            >
+              <p className="text-xs uppercase tracking-[0.3em] text-[rgb(var(--muted))]">Doc</p>
+              <h3 className="mt-3 text-lg font-semibold">{doc.title}</h3>
+              <p className="mt-2 text-sm text-[rgb(var(--muted))]">
+                Static content with a floating Ask AI widget.
+              </p>
+              <span className="mt-4 inline-flex text-xs uppercase tracking-[0.2em] text-[rgb(var(--accent))]">
+                Read
+              </span>
+            </Link>
           ))}
-        </ul>
+        </div>
       </section>
 
       <AskForm />

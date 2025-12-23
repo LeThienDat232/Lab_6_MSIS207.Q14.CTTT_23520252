@@ -38,12 +38,12 @@ export default function AskWidget() {
   return (
     <div className="fixed bottom-4 right-4 z-50">
       {open ? (
-        <div className="w-[320px] rounded-xl border bg-white p-3 shadow-lg dark:bg-slate-900">
+        <div className="surface w-[320px] rounded-2xl p-4">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-semibold">Ask AI</h3>
             <button
               onClick={() => setOpen(false)}
-              className="text-xs opacity-70 hover:opacity-100"
+              className="text-xs uppercase tracking-[0.2em] text-[rgb(var(--muted))] hover:text-[rgb(var(--fg))]"
             >
               Close
             </button>
@@ -54,19 +54,19 @@ export default function AskWidget() {
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               placeholder="Ask about routing, SSG..."
-              className="w-full rounded border px-2 py-1 text-sm"
+              className="w-full rounded-full border border-[rgb(var(--border))] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--accent)/0.4)]"
             />
             <button
               type="submit"
               disabled={disabled}
-              className="w-full rounded border px-2 py-1 text-sm hover:bg-black/5 disabled:opacity-50 dark:hover:bg-white/10"
+              className="w-full rounded-full bg-[rgb(var(--fg))] px-3 py-2 text-xs uppercase tracking-[0.2em] text-[rgb(var(--bg))] transition hover:opacity-90 disabled:opacity-50"
             >
               {loading ? "Thinking..." : "Ask"}
             </button>
           </form>
 
           {answer ? (
-            <div className="mt-3 max-h-48 overflow-auto rounded border p-2 text-xs whitespace-pre-wrap">
+            <div className="mt-3 max-h-48 overflow-auto rounded-xl border border-[rgb(var(--border))] bg-[rgb(var(--surface)/0.7)] p-2 text-xs whitespace-pre-wrap">
               {answer}
             </div>
           ) : null}
@@ -74,7 +74,7 @@ export default function AskWidget() {
       ) : (
         <button
           onClick={() => setOpen(true)}
-          className="rounded-full border bg-white px-3 py-2 text-sm shadow-md dark:bg-slate-900"
+          className="surface rounded-full px-4 py-3 text-xs uppercase tracking-[0.2em] text-[rgb(var(--muted))] transition hover:text-[rgb(var(--fg))]"
         >
           Ask AI
         </button>

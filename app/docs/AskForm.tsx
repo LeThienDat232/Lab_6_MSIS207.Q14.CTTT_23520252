@@ -16,7 +16,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="rounded border px-3 py-1 text-sm hover:bg-black/5 disabled:opacity-50 dark:hover:bg-white/10"
+      className="rounded-full bg-[rgb(var(--fg))] px-4 py-2 text-xs uppercase tracking-[0.2em] text-[rgb(var(--bg))] transition hover:opacity-90 disabled:opacity-50"
     >
       {pending ? "Thinking..." : "Ask"}
     </button>
@@ -27,18 +27,20 @@ export default function AskForm() {
   const [state, formAction] = useFormState(askAI, initialState);
 
   return (
-    <form action={formAction} className="space-y-3 rounded-xl border p-4">
-      <h3 className="font-semibold">Ask AI (Server Action)</h3>
+    <form action={formAction} className="surface space-y-3 rounded-2xl p-5">
+      <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--muted))]">
+        Ask AI (Server Action)
+      </h3>
       <input
         name="prompt"
         placeholder="Ask about routing, SSG, middleware..."
-        className="w-full rounded border px-2 py-1 text-sm"
+        className="w-full rounded-full border border-[rgb(var(--border))] bg-transparent px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--accent)/0.4)]"
         defaultValue={state.prompt}
       />
       <SubmitButton />
 
       {state.answer ? (
-        <div className="rounded border p-2 text-sm">
+        <div className="rounded-xl border border-[rgb(var(--border))] bg-[rgb(var(--surface)/0.7)] p-3 text-sm">
           <p className="whitespace-pre-wrap">{state.answer}</p>
           {state.sources.length ? (
             <div className="mt-2 text-xs opacity-70">
